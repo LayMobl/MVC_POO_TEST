@@ -18,14 +18,15 @@
     3. Chargement du template qui affiche les zones dynamiques
     4. Fermeture de l'application (la connexion)
  */
+use \Noyau\Classes\App;
 
- require_once "../vendor/autoload.php";
- include '../app/config/parametres.php';
+require_once "../vendor/autoload.php";
+include '../app/config/parametres.php';
 
- \Noyau\Classes\App::start();
+App::start();
 
- include_once "../app/routeur.php";
- include_once "../app/vues/templates/defaut.php";
+include_once '../app/routeur.php';
 
+include '../app/vues/templates/defaut.php';
 
- \Noyau\Classes\App::stop();
+App::stop();
