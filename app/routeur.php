@@ -3,12 +3,16 @@
   ./app/routeur.php
  */
 
- /*
- ROUTE 1:
- PATTERN: /
- CTRL: ArticlesControleur
- ACTION: indexAction
-  */
+ if (isset($_GET['posts'])):
+   include '../app/routeurs/postsRouteur.php';
+ else:
 
-  $ctrl = new \App\Controleurs\ArticlesControleur();
-  $ctrl->indexAction();
+   /*
+   ROUTE 1:
+   PATTERN: /
+   CTRL: ArticlesControleur
+   ACTION: indexAction
+    */
+    $ctrl = new \App\Controleurs\PostsControleur();
+    $ctrl->indexAction();
+  endif;

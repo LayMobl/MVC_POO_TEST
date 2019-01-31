@@ -12,7 +12,12 @@ RewriteEngine on
 # Règles de réécriture d'URL :
 #--------------------------------------------------
 
+# DETAILS D'UN POST
+# PATTERN: /posts/id/slug
+# URL: ?posts=show&id=x&slug=xxx
+  RewriteRule ^posts\/([1-9][0-9]*)\/([a-z][a-z0-9\-]+)$ index.php?posts=show&id=$1&slug=$2 [L]
 
 # --------------------------------------------------
+
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
